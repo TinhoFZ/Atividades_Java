@@ -13,8 +13,6 @@ public static String cpfConsulta, medicoConsulta, data;
 public static int dia, mes, ano;
 
 public static Scanner entrada = new Scanner(System.in);
-
-Medico medico = new Medico();
 	
 	public static void registrarConsulta() {
 		
@@ -23,9 +21,7 @@ Medico medico = new Medico();
 
         System.out.println("Nome do médico:");
         medicoConsulta = entrada.nextLine();
-        
-        System.out.println(Paciente.cpfPaciente[0]);
-    	System.out.println(Medico.nomeMedico[0]);
+;
         for (int i = 0; i < Paciente.numeroPacientes; i ++) {
         	if (cpfConsulta.equalsIgnoreCase(Paciente.cpfPaciente[i]) && medicoConsulta.equalsIgnoreCase(Medico.nomeMedico[i])) {
 
