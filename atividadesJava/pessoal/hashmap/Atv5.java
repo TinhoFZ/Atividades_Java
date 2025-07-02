@@ -8,9 +8,11 @@ import java.util.*;
 
 public class Atv5 {
 
+	public Scanner input = new Scanner(System.in);
+	
 	public void rodar() {
 		HashMap<String, Integer> normal = new HashMap<>();
-		Scanner input = new Scanner(System.in);
+		
 		
 		System.out.println("Quantos nomes deseja escrever?");
 		int quantidade = input.nextInt();
@@ -26,11 +28,12 @@ public class Atv5 {
 			
 			normal.put(nome, numero);
 		}
+		
 		HashMap<Integer, List<String>> invertido = inverter(normal);
 		System.out.println(invertido);
 	}
 
-	public HashMap<Integer, List<String>> inverter(HashMap<String, Integer> normal){
+	private HashMap<Integer, List<String>> inverter(HashMap<String, Integer> normal){
 		HashMap<Integer, List<String>> invertido = new HashMap<>();
 		String nome = "";
 		int numero = 0;
