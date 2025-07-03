@@ -27,6 +27,21 @@ public class Main {
 		for (Atv2Animais animal : animais) {
 			animal.falar();
 		}
+		
+		Livro livro = new Livro("El necronomicon", 59.99);
+		Roupa roupa = new Roupa("Jeans", 199.89);
+		Eletronico eletronico = new Eletronico("Celular", 1899.59);
+		
+		ArrayList<Atv3Item> itens = new ArrayList<>();
+		itens.add(livro);
+		itens.add(roupa);
+		itens.add(eletronico);
+		
+		for (Atv3Item item : itens) {
+			item.mostrarPreco();
+		}
+		
+		
 	}
 
 }

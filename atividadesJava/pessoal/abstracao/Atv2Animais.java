@@ -1,7 +1,5 @@
 package abstracao;
 
-import java.util.Scanner;
-
 //Goal: Learn about protected access and constructor chaining.
 //Task:
 //    Create a base class Animal with:
@@ -14,7 +12,6 @@ import java.util.Scanner;
 //protected allows subclasses to access fields from the parent class, but not unrelated classes.
 
 abstract class Atv2Animais {
-	protected Scanner input = new Scanner(System.in);
 	protected String nome;
 	
 	// O nome do animal deve ser dado ao chamar o método
@@ -22,7 +19,7 @@ abstract class Atv2Animais {
 		this.nome = nome;
 	}
 	
-	abstract void falar();
+	abstract public void falar();
 }
 
 class Cachorro extends Atv2Animais {
@@ -31,7 +28,7 @@ class Cachorro extends Atv2Animais {
 		super(nome);
 	}
 	@Override
-	void falar() {
+	public void falar() {
 		System.out.println(nome + " faz Au Au");
 	}
 }
@@ -43,7 +40,7 @@ class Gato extends Atv2Animais {
 	}
 	
 	@Override
-	void falar() {
+	public void falar() {
 		System.out.println(nome + " faz Miau");
 	}
 }
