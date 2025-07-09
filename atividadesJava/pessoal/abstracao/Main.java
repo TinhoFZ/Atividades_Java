@@ -41,7 +41,19 @@ public class Main {
 			item.mostrarPreco();
 		}
 		
+		Guerreiro dps = new Guerreiro("Tunho");
+		Curandeiro suporte = new Curandeiro("Margarida");
 		
+		ArrayList<Atv4Personagem> personagens = new ArrayList<>();
+		
+		personagens.add(dps);
+		personagens.add(suporte);
+		
+		for (Atv4Personagem personagem : personagens) {
+			personagem.atacar();
+			if (personagem.equals(suporte)) {
+				suporte.curar(20);
+			}
+		}
 	}
-
 }
