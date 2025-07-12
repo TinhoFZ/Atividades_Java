@@ -1,40 +1,25 @@
 package linkedList;
 
-import java.util.*;
+//Goal: Understand how to build a linked list manually using a ListNode class and print its contents.
+//Task:
+//    Create a class ListNode with int val and ListNode next.
+//    Use it to build the list: 3 -> 7 -> 9
+//    Print it in the format: 3 -> 7 -> 9
 
 public class Atv1 {
-	
-	private Node head;
-	private int next;
-	
-	Scanner input = new Scanner(System.in);
-	
-	public void iniciar() {
-		Node primeiro = new Node(3);
-		Node segundo = new Node(7);
-		Node terceiro = new Node(9);
-
-		primeiro.next = segundo;
-		segundo.next = terceiro;
+	public void rodar() {
+		Node lista = new Node(3);
+		lista.setNext(new Node(7));
+		lista.getNext().setNext(new Node(9));
 		
-		Node atual = primeiro;
-		while (atual.next != null) {
-			atual = atual.next;
+		Node atual = lista;
+		
+		while(atual != null) {
+			System.out.print(atual.getValor());
+			if(atual.getNext() != null) {
+				System.out.print(" -> ");
+			}
+			atual = atual.getNext();
 		}
-		
-		
-		LinkedList<Integer> numeros = new LinkedList<>();
-		numeros.add(3);
-		numeros.add(7);
-		numeros.add(9);
-		System.out.println(numeros);
-		
-		LinkedList<Integer> invertido = new LinkedList<>();
-		int tamanho = numeros.size();
-		for (int i = 0; i < tamanho; i ++) {
-			invertido.add(numeros.getLast());
-			numeros.removeLast();
-		}
-		System.out.println(invertido);
 	}
 }
