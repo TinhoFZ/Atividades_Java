@@ -1,6 +1,9 @@
+package arquivos;
+
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
+
 
 class Ler {
 
@@ -31,6 +34,8 @@ class Ler {
 				texto = br.readLine();
 				linha ++;
 			}
+			br.close();
+			
 			System.out.println("Número total de linhas: " + linha);
 		} catch (IOException e) {
 			System.out.println("Houve um erro no sistema!");

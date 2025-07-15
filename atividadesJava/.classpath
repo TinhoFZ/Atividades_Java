@@ -8,5 +8,10 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="aulas"/>
 	<classpathentry kind="src" path="pessoal"/>
+	<classpathentry kind="lib" path="C:/Users/tarci/OneDrive/Documentos/Eduardo/Eduardo_Java/custom_classes/eduardo.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -14,7 +14,6 @@ public class Main {
 		Atv5 atv5 = new Atv5();
 		Atv6 atv6 = new Atv6();
 		Atv7 atv7 = new Atv7();
-		Atv8 atv8 = new Atv8();
 		
 		System.out.println("Que atividade deseja visualizar? \n[1] [2] [3] [4] [5] [6] [7] [8]");
 		int escolha = input.nextInt();
@@ -40,9 +39,6 @@ public class Main {
 			break;
 		case 7:
 			atv7.rodar();
-			break;
-		case 8:
-			atv8.rodar();
 			break;
 		}		
 	}
