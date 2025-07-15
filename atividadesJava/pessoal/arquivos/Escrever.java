@@ -17,14 +17,15 @@ class Escrever {
 			
 			boolean parar = true;
 			
-			String texto = input.nextLine();
+			String texto = null;
 			while(parar) {
-				bw.newLine();
-				bw.write(texto);
+				if (texto != null) {
+					bw.write(texto);
+					bw.newLine();
+				}
 				texto = input.nextLine();
 				parar = !texto.contains("Parar de digitar em " + Procura.nome);
 			}
-			input.close();
 			bw.close();
 			System.out.println("As informações do arquivo foram atualizadas!");
 		} catch (IOException e) {
