@@ -1,6 +1,7 @@
 package abstracao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -54,6 +55,23 @@ public class Main {
 			if (personagem.equals(suporte)) {
 				suporte.curar(20);
 			}
+		}
+		
+		Pocao pocao = new Pocao("poção");
+		Espada espada = new Espada("Espada");
+		Pergaminho pergaminho = new Pergaminho("Pergaminho");
+		
+		List<Atv5Itens> inventario = new ArrayList<>();
+		inventario.add(pocao);
+		inventario.add(espada);
+		inventario.add(pergaminho);
+		
+		for (Atv5Itens item : inventario) {
+			item.descrever();
+			// Vai checar se o item está implementando "Usavel"
+		    if (item instanceof Usavel) {
+		        ((Usavel) item).usar();
+		    }
 		}
 	}
 }
