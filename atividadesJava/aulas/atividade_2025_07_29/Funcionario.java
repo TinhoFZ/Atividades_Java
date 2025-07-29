@@ -40,14 +40,18 @@ public class Funcionario {
             int quantidade = input.nextInt();
             input.nextLine();
 
+            System.out.println("Qual o preço da ferramenta?");
+            double preco = input.nextDouble();
+
+
             System.out.println("A ferramenta é elétrica [0] ou manual [1]?");
             int escolha = input.nextInt();
             input.nextLine();
 
             if(escolha == 0){
-                estoque.add(new Ferramenta(nome, quantidade, false));
+                estoque.add(new Ferramenta(nome, quantidade, preco, false));
             } else if(escolha == 1){
-                estoque.add(new Ferramenta(nome, quantidade, true));
+                estoque.add(new Ferramenta(nome, quantidade, preco, true));
             } else {
                 System.out.println("Insira um valor válido!");
             }
@@ -60,7 +64,8 @@ public class Funcionario {
     public void consultarEstoque(){
         for (Ferramenta ferramenta : estoque) {
             System.out.println("Id: " + ferramenta.getId() + " | Nome: " + ferramenta.getNome() +
-                    " | Quantidade: " + ferramenta.getQuantidade() + " | Tipo: " + ferramenta.getNomeFerramentaManual());
+                    " | Quantidade: " + ferramenta.getQuantidade() + " | Tipo: " + ferramenta.getNomeFerramentaManual() +
+                    " | Preço: " + ferramenta.getPreco());
         }
 
     }
@@ -85,7 +90,7 @@ public class Funcionario {
 
     public void verEstoqueBaixo(){
         for(Ferramenta ferramenta : estoque){
-            if(ferramenta.getQuantidade() < 7){
+            if(ferramenta.getQuantidade() < 5){
                 System.out.println("Id: " + ferramenta.getId() + " | Nome: " + ferramenta.getNome() +
                         " | Quantidade: " + ferramenta.getQuantidade() + " | Tipo: " + ferramenta.getNomeFerramentaManual());
             }
@@ -93,16 +98,16 @@ public class Funcionario {
     }
 
     public void verTotal(){
-        int estoqueTotal = 0, estoqueTotalManual = 0, estoqueTotalEletrico = 0;
+        double estoqueTotal = 0, estoqueTotalManual = 0, estoqueTotalEletrico = 0;
         for(Ferramenta ferramenta : estoque){
             if(ferramenta.isFerramentaManual()){
-                estoqueTotalManual += ferramenta.getQuantidade();
+                estoqueTotalManual += ferramenta.getPreco() * ferramenta.getQuantidade();
             } else {
-                estoqueTotalEletrico += ferramenta.getQuantidade();
+                estoqueTotalEletrico += ferramenta.getPreco() * ferramenta.getQuantidade();
             }
-            estoqueTotal += ferramenta.getQuantidade();
+            estoqueTotal += ferramenta.getPreco() * ferramenta.getQuantidade();
         }
-        System.out.println("O estoque total no sistema é: "  + estoqueTotal + "\n O estoque total manual no sistema é: "  + estoqueTotalManual +
-                "\n O estoque total elétrico no sistema é: " + estoqueTotalEletrico);
+        System.out.println("O preço total no sistema é: "  + estoqueTotal + "\n O preço total manual no sistema é: "  + estoqueTotalManual +
+                "\n O preço total elétrico no sistema é: " + estoqueTotalEletrico);
     }
 }

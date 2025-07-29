@@ -1,12 +1,14 @@
 public class Ferramenta {
     private String nome;
     private int quantidade, id;
+    private double preco;
     private boolean ferramentaManual;
     private static int idTotal = 0;
 
-    public Ferramenta(String nome, int quantidade, boolean ferramentaManual) {
+    public Ferramenta(String nome, int quantidade, double preco, boolean ferramentaManual) {
         this.nome = nome;
         this.quantidade = quantidade;
+        this.preco = preco;
         this.ferramentaManual = ferramentaManual;
         id = idTotal;
         idTotal++;
@@ -25,7 +27,26 @@ public class Ferramenta {
     }
 
     public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+        if (quantidade >= 0){
+            this.quantidade = quantidade;
+        } else {
+            System.out.println("Quantidade negativa! A quantidade será '0'");
+            this.quantidade = 0;
+        }
+
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        if (preco >= 0) {
+            this.preco = preco;
+        } else {
+            System.out.println("Preço negativo! O preço será '0'");
+            this.quantidade = 0;
+        }
     }
 
     public int getId() {
